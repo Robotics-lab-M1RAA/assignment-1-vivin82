@@ -1,0 +1,107 @@
+1. ROS nodes : Launch ROS core and carry out the following tasks
+
+(a) List the currently running nodes
+
+/rosout
+
+(b) What is the purpose of node /rosout
+
+The /rosout node is used to log messages from nodes and is used to display them in a single stream.
+ 
+(c) List the currently running topics
+
+/rosout
+/rosout_agg
+
+(d) What topics are subscribed by the node /rosout
+
+Subscriptions: 
+ * /rosout [unknown type]
+
+(e) What topics are published by the node /rosout
+
+Publications: 
+ * /rosout_agg [rosgraph_msgs/Log]
+
+(f) What are the services provided by the node /rosout
+
+Services: 
+ * /rosout/get_loggers
+ * /rosout/set_logger_level
+
+(g) Kill the node /rosout and again list the running nodes. What is your observation.
+
+killing /rosout
+killed
+/rosout
+/rosout cannot be terminated unless we exit from roscore.
+
+(h) What are the functions of commands cleanup, info, kill, list, machine &
+ping of the rosnode command-line tool
+
+        rosnode ping	 test connectivity to node
+	rosnode list	 list active nodes
+	rosnode info	 print information about node
+	rosnode machine list nodes running on a particular machine or list machines
+	rosnode kill	 kill a running node
+	rosnode cleanup purge registration information of unreachable nodes
+
+2. ROS publisher node : Create a ROS publisher node with the following features.
+Node name : '<your first name_pubnode'
+Topic published : 'Greetings'
+Message : 'Hello, I am <your first name>'
+Message type : std_msgs_String
+Rate of publishing message : 10 Hz
+Use rospy.loginfo to echo the message published on to the terminal
+
+(b) Launch rqt_graph. Save its screenshot as question2_rqt1.png Comment on your
+observations from rqt_graph.
+
+	Only 1 node is running and it is directly communicating with /rosout because the subscriber code has not been executed.
+
+3. ROS subscriber node : Create a ROS subscriber with the name 'RAA24_subnode'
+that subscribes to the topic 'Greetings'
+
+(b) Run rqt_graph and save the screenshot as question3_rqt1.png. Comment on your
+observations from rqt_graph.
+
+	The node vivin_node1 is communicating directly with rosout and the subscriber code RAA24_subnode.
+
+4. ROS publisher-subscriber node Realize the ROS nodes and messages as shown in the
+figure 1 below
+
+(a) List the currently running nodes
+
+/CET_18181_1729680419745
+/M1RAA_24_26_18112_1729680412722
+/Vivin_18039_1729680393439
+/rosout
+
+(b) List the currently running topics
+
+/Hello_class
+/Welcome
+/hello_college
+/rosout
+/rosout_agg
+
+(c) What is the role of the node rosout
+
+rosout gives us the output from all the 3 nodes that are currently running.
+
+(d) Change the name of node 2 to 'M1RAA 2024' and rerun the code. Write down any
+error message displayed.
+
+[FATAL] [1729680689.392281]: unable to register service [/M1RAA 2024_20835_1729680689251/get_loggers] with master: ERROR: parameter [service] contains illegal chars
+[FATAL] [1729680689.397698]: unable to register service [/M1RAA 2024_20835_1729680689251/set_logger_level] with master: ERROR: parameter [service] contains illegal chars
+
+
+
+
+
+
+
+
+
+
+
