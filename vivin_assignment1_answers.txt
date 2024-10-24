@@ -59,6 +59,12 @@ observations from rqt_graph.
 
 	Only 1 node is running and it is directly communicating with /rosout because the subscriber code has not been executed.
 
+(d) Modify the publisher code to run concurrently three publisher nodes with the name
+'<your rst name_node1'. Run rqt_graph and save the screenshot as question2_rqt2.png
+. Comment on your observations from rqt_graph.
+
+	Here there are 3 publisher nodes and no subscriber nodes, hence they are directly passing their messages to rosout and rosout is displaying those messages without the need of a subscriber node.
+
 3. ROS subscriber node : Create a ROS subscriber with the name 'RAA24_subnode'
 that subscribes to the topic 'Greetings'
 
